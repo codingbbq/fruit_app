@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/models/fruits.dart';
+import 'package:fruit_app/widgets/fruit_card.dart';
 
 class FruitsPage extends StatelessWidget {
   @override
@@ -24,9 +26,10 @@ class FruitsPage extends StatelessWidget {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Text(
               "All Fruits",
               style: TextStyle(
@@ -40,7 +43,24 @@ class FruitsPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: <Widget>[
-                Text("Oranage"),
+                for(final fruits in allFruits) Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+                  child: Text(
+                    fruits.fruitName,
+                    style: TextStyle(
+                      fontSize: 18.0, color: Color(0xFFb4b4b4)
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                for(final fruit in allFruits) FruitCard(fruit: fruit)
               ],
             ),
           )
