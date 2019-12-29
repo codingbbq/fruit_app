@@ -22,7 +22,7 @@ final newWaterMelon = FruitNewItem(
 
 final newKiwi = FruitNewItem(
   price: 30.00,
-  fruitName: "Water melon",
+  fruitName: "Kiwi",
   image: "assets/images/new_kiwi.png",
   weight: "2Kg"
 );
