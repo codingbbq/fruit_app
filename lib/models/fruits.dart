@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Fruit{
   final int id;
   final String fruitName;
@@ -6,6 +8,7 @@ class Fruit{
   final String imagePath;
   final String summary;
   final String description;
+  final List<MaterialColor> color;
 
   Fruit({
     this.id, 
@@ -14,13 +17,15 @@ class Fruit{
     this.weight, 
     this.imagePath, 
     this.summary, 
-    this.description
+    this.description,
+    this.color
   });
 
 }
 
 final orange = Fruit(
   id: 1,
+  color: [Colors.orange[900], Colors.orange[200]],
   fruitName: "Orange",
   price: 10.0,
   weight: "2Kg",
@@ -31,6 +36,7 @@ final orange = Fruit(
 
 final banana = Fruit(
   id: 2,
+  color: [Colors.lightGreen[900], Colors.lightGreen[200]],
   fruitName: "Banana",
   price: 10.0,
   weight: "2Kg",
@@ -41,6 +47,7 @@ final banana = Fruit(
 
 final pomegranate = Fruit(
   id: 3,
+  color: [Colors.red[900], Colors.red[200]],
   fruitName: "Pomegranate",
   price: 10.0,
   weight: "2Kg",
@@ -51,6 +58,7 @@ final pomegranate = Fruit(
 
 final apple = Fruit(
   id: 4,
+  color: [Colors.pink[900],Colors.pink[200]],
   fruitName: "Apple",
   price: 10.0,
   weight: "2Kg",
@@ -61,6 +69,7 @@ final apple = Fruit(
 
 final waterMelon = Fruit(
   id: 5,
+  color: [Colors.green[900], Colors.green[200]],
   fruitName: "Water melon",
   price: 10.0,
   weight: "2Kg",
@@ -71,6 +80,7 @@ final waterMelon = Fruit(
 
 final strawberry = Fruit(
   id: 6,
+  color: [Colors.purple[900], Colors.purple[200]],
   fruitName: "Strawberry",
   price: 10.0,
   weight: "2Kg",
@@ -81,6 +91,7 @@ final strawberry = Fruit(
 
 final guava = Fruit(
   id: 7,
+  color: [Colors.teal[900], Colors.teal[200]],
   fruitName: "Guava",
   price: 10.0,
   weight: "2Kg",
