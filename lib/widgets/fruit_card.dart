@@ -9,7 +9,7 @@ class FruitCard extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-
+    print(fruit.color);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Container(
@@ -20,7 +20,7 @@ class FruitCard extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: [0, 1],
-            colors: [Colors.orange[700], Colors.orange[500]],
+            colors: [fruit.color[0], fruit.color[1]],
           ),
           borderRadius: BorderRadius.circular(16.0),
           boxShadow: <BoxShadow>[

@@ -8,7 +8,7 @@ class Fruit{
   final String imagePath;
   final String summary;
   final String description;
-  final List<MaterialColor> color;
+  final List<Color> color;
 
   Fruit({
     this.id, 

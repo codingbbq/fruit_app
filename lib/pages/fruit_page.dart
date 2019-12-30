@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/models/fruits.dart';
 import 'package:fruit_app/widgets/fruit_card.dart';
+import 'package:fruit_app/widgets/fruit_links.dart';
 import 'package:fruit_app/widgets/fruit_new_items.dart';
 
 class FruitsPage extends StatelessWidget {
@@ -45,15 +46,7 @@ class FruitsPage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: <Widget>[
-                  for(final fruits in allFruits) Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
-                    child: Text(
-                      fruits.fruitName,
-                      style: TextStyle(
-                        fontSize: 18.0, color: Color(0xFFb4b4b4)
-                      ),
-                    ),
-                  )
+                  for(final fruit in allFruits) FruitLinks(fruit: fruit)
                 ],
               ),
             ),
