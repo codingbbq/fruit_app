@@ -103,11 +103,12 @@ final guava = Fruit(
 final List<Fruit> allFruits = [
   orange,
   banana,
-  waterMelon,
-  apple,
-  guava,
   pomegranate,
-  strawberry
+  apple,
+  waterMelon,
+  strawberry,
+  guava,
+
 ];
 
 

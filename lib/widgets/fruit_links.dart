@@ -23,9 +23,20 @@ class FruitLinks extends StatelessWidget {
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
-        child: Text(
-          fruit.fruitName,
-          style: isSelected? TextStyle(fontSize: 19.0, color: Colors.black, fontWeight: FontWeight.bold) : TextStyle(fontSize: 18.0, color: Color(0xFFb4b4b4)),
+        child: Container(
+          padding: const EdgeInsets.only(bottom: 5.0),
+          decoration: isSelected? BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                width: 2.0,
+                color: Colors.black
+              )
+            )
+          ) : BoxDecoration(),
+          child: Text(
+            fruit.fruitName,
+            style: isSelected? TextStyle(fontSize: 19.0, color: Colors.black, fontWeight: FontWeight.bold) : TextStyle(fontSize: 18.0, color: Color(0xFFb4b4b4)),
+          ),
         ),
       ),
     );

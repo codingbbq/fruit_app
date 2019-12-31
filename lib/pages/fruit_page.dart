@@ -59,13 +59,19 @@ class FruitsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: <Widget>[
-                    for (final fruit in allFruits) FruitCard(fruit: fruit)
-                  ],
+              Container(
+                child: Consumer<AppState>(
+                  builder: (context, appState, _) => SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      Text(appState.fruitId.toString()),
+                      SizedBox(height: 10.0,),
+                      for (final fruit in allFruits) FruitCard(fruit: fruit),
+                    ],
+                  ),
                 ),
+                )
               ),
               SizedBox(
                 height: 10.0,
