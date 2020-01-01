@@ -65,8 +65,6 @@ class FruitsPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: <Widget>[
-                      Text(appState.fruitId.toString()),
-                      SizedBox(height: 10.0,),
                       for (final fruit in allFruits) FruitCard(fruit: fruit),
                     ],
                   ),
