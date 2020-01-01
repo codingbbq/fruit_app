@@ -81,7 +81,7 @@ class FruitCard extends StatelessWidget {
                 child: Text(
                   fruit.summary,
                   maxLines: 4,
-                  style: TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
               SizedBox(height: 20.0),

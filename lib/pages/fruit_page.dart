@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/models/fruits.dart';
+import 'package:fruit_app/widgets/fruit_app_bar.dart';
 import 'package:fruit_app/widgets/fruit_card.dart';
 import 'package:fruit_app/widgets/fruit_links.dart';
 import 'package:fruit_app/widgets/fruit_new_items.dart';
@@ -12,24 +13,7 @@ class FruitsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          color: Color(0xFF918b8b),
-          onPressed: () {},
-          iconSize: 35.0,
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            color: Color(0xFF918b8b),
-            onPressed: () {},
-            iconSize: 35.0,
-          )
-        ],
-      ),
+      appBar: FruitAppBar(),
       body: ChangeNotifierProvider<AppState>(
         create: (_) => AppState(),
         child: SingleChildScrollView(
@@ -60,8 +44,8 @@ class FruitsPage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: Consumer<AppState>(
-                  builder: (context, appState, _) => SingleChildScrollView(
+                  child: Consumer<AppState>(
+                builder: (context, appState, _) => SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: <Widget>[
@@ -69,8 +53,7 @@ class FruitsPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                )
-              ),
+              )),
               SizedBox(
                 height: 10.0,
               ),
