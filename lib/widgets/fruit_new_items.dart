@@ -25,17 +25,30 @@ class NewFruitItemsListing extends StatelessWidget {
                       ),
                       for(final newFruit in newFruits) Container(
                         padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+                        margin: const EdgeInsets.only(right: 10.0, top: 10.0, bottom: 10.0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0)
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.white,
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 5.0,
+                              spreadRadius: 0.0,
+                            )
+                          ]
                         ),
                         child: Column(
                           children: <Widget>[
-                            Placeholder(
-                              fallbackHeight: 80,
-                              fallbackWidth: 100,
+                            Center(
+                              child: Image(
+                                image: AssetImage(
+                                  newFruit.image
+                                ),
+                                height: 80,
+                              ),
                             ),
                             SizedBox(height: 5.0,),
-                            Text(newFruit.fruitName),
+                            Text(newFruit.fruitName, style: TextStyle(fontWeight: FontWeight.bold),),
                             SizedBox(height: 5.0,),
                             Text(r"$10.00 (2kg)")
                           ],

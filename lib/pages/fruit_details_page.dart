@@ -47,11 +47,16 @@ class FruitDetailsPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
-              Placeholder(fallbackHeight: 220),
+              Center(
+                child: Image(
+                  image: AssetImage(fruit.imagePath),
+                  height: 250,
+                ),
+              ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Text(
                 "Description",

@@ -13,11 +13,9 @@ class FruitCard extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => FruitDetailsPage(fruit: fruit),
-            )
-          );
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => FruitDetailsPage(fruit: fruit),
+          ));
         },
         child: Container(
           width: MediaQuery.of(context).size.width * 0.70,
@@ -68,12 +66,12 @@ class FruitCard extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Center(
-                  child: Placeholder(
-                    fallbackWidth: 100,
-                    fallbackHeight: 160,
-                  ),
+                  child: Image(
+                    image: AssetImage(fruit.imagePath),
+                    width: MediaQuery.of(context).size.width * 0.50,
+                  )
                 ),
               ),
               Padding(
@@ -84,7 +82,7 @@ class FruitCard extends StatelessWidget {
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 15.0),
               Center(
                 child: RaisedButton(
                   padding: const EdgeInsets.symmetric(
