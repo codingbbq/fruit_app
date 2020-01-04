@@ -126,6 +126,8 @@ class FruitDetailsPage extends StatelessWidget {
               ),
             ),
             FlatButton(
+              disabledColor: Colors.grey,
+              disabledTextColor: Colors.white10,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25.0)
@@ -133,7 +135,9 @@ class FruitDetailsPage extends StatelessWidget {
               ),
               padding: const EdgeInsets.symmetric(horizontal: 26.0, vertical: 15.0),
               color: Colors.white,
-              onPressed: (){},
+              onPressed: appState.cartDetails.contains(fruit.id) ? null : (){
+                appState.addToCart(fruit.id);
+              },
               child: Text("Buy Now", style: TextStyle(color: fruit.color[0], fontSize: 24.0, fontWeight: FontWeight.bold),),
             )
           ],
