@@ -11,12 +11,12 @@ import '../app_state.dart';
 class FruitsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: FruitAppBar(),
-      body: ChangeNotifierProvider<AppState>(
-        create: (_) => AppState(),
-        child: SingleChildScrollView(
+    return ChangeNotifierProvider<AppState>(
+      create: (_) => AppState(),
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: FruitAppBar(),
+        body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

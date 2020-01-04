@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import '../app_state.dart';
+
 class FruitAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
+
+    final appState = Provider.of<AppState>(context);
+    final addedToCart = appState.cart;
+    
     return AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -21,7 +29,7 @@ class FruitAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () {},
                 iconSize: 35.0,
               ),
-              Positioned(
+              (addedToCart > 0) ? Positioned(
                 width: 20,
                 height: 20,
                 right: 5,
@@ -33,12 +41,12 @@ class FruitAppBar extends StatelessWidget with PreferredSizeWidget {
                     borderRadius: BorderRadius.circular(20.0)
                   ),
                   child: Text(
-                    '10', 
+                    appState.cart.toString(), 
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12.0),
                     textAlign: TextAlign.center,
                   ),
                 ),
-              )
+              ) : Container()
             ],
           )
         ],

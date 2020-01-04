@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/models/fruits.dart';
 import 'package:fruit_app/pages/fruit_details_page.dart';
+import 'package:provider/provider.dart';
+
+import '../app_state.dart';
 
 class FruitCard extends StatelessWidget {
   final Fruit fruit;
@@ -9,6 +12,9 @@ class FruitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final appState = Provider.of<AppState>(context);
+    
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: GestureDetector(
@@ -93,7 +99,9 @@ class FruitCard extends StatelessWidget {
                     "Add to Cart",
                     style: TextStyle(color: Colors.white, fontSize: 16.0),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    appState.addToCart(fruit.id);
+                  },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
