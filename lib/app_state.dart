@@ -4,6 +4,7 @@ class AppState extends ChangeNotifier {
 
   int fruitId = 1;
   int cart = 0;
+  bool success = false;
   List<int> cartDetails = [];
 
   selectFruitId(int fruitId) {
@@ -15,6 +16,9 @@ class AppState extends ChangeNotifier {
     if(!cartDetails.contains(fruitId)){
       this.cartDetails.add(fruitId);
       this.cart += 1;
+      this.success = true;
+    }else{
+      this.success = false;
     }
     notifyListeners();
   }

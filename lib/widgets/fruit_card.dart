@@ -12,9 +12,8 @@ class FruitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final appState = Provider.of<AppState>(context);
-    
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: GestureDetector(
@@ -71,21 +70,26 @@ class FruitCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Center(
-                  child: Image(
+              Container(
+                height: 200,
+                              child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Center(
+                      child: Image(
                     image: AssetImage(fruit.imagePath),
-                    width: MediaQuery.of(context).size.width * 0.50,
-                  )
+                    fit: BoxFit.fitHeight,
+                  )),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(
-                  fruit.summary,
-                  maxLines: 4,
-                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+              Container(
+                height: 90,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    fruit.summary,
+                    maxLines: 4,
+                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  ),
                 ),
               ),
               SizedBox(height: 15.0),
@@ -101,6 +105,7 @@ class FruitCard extends StatelessWidget {
                   ),
                   onPressed: () {
                     appState.addToCart(fruit.id);
+                    _showNotificationMessage(context, appState.success);
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
@@ -110,6 +115,31 @@ class FruitCard extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void _showNotificationMessage(BuildContext context, bool success) {
+    final scaffold = Scaffold.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: success
+            ? Text(
+                'Added to the Cart',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0),
+              )
+            : Text(
+                'Already in the cart',
+                style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0),
+              ),
+        action: SnackBarAction(
+            label: 'CLOSE', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }
