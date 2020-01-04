@@ -1,23 +1,22 @@
 # Fruit APP UI - Developed in Flutter
 
-We try to build a UI in flutter based on the [dribble](https://dribbble.com/shots/6439039-Fruit-App) design.
+- We try to build a UI in flutter based on the [dribble](https://dribbble.com/shots/6439039-Fruit-App) design.
 
-All the images are downloaded from [StickPNG](https://www.stickpng.com/)
+- All the images used during development of the flutter application are downloaded from [Stickpng](https://www.stickpng.com/)
 
 ---
 
+Below screenshots are the final output seen on the Android emulator. I had fun developing the UI in flutter.
+
 ### Home Page
 
-<div class="float-left py-4 w-100">![Home Page](./screenshots/home_page_1.png)</div>
 
-<div class="float-left py-4 w-100">![Home Page](./screenshots/home_page_2.png)</div>
+<div style="display:inline-block; margin-right: 30px;"><img src="screenshots/home_page_1.png" /></div>
 
-<div class="clear-both"></div>
+<div style="display:inline-block"><img src="screenshots/home_page_2.png" /></div>
 
 ### Add to Cart and Details page
 
-<div class="float-left py-4 w-100">![Home Page](./screenshots/add_to_cart.png)</div>
+<div style="display:inline-block; margin-right: 30px;"><img src="screenshots/add_to_cart.png" /></div>
 
-<div class="float-left py-4 w-100">![Home Page](./screenshots/details_page.png)</div>
-
-<div class="clear-both"></div>
+<div style="display:inline-block"><img src="screenshots/details_page.png" /></div>
