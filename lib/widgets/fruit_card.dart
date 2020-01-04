@@ -19,7 +19,11 @@ class FruitCard extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => FruitDetailsPage(fruit: fruit),
+            builder: (context) => ChangeNotifierProvider.value(
+              value: appState,
+              child: FruitDetailsPage(fruit: fruit),
+            )
+            
           ));
         },
         child: Container(
@@ -82,7 +86,7 @@ class FruitCard extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 90,
+                height: 100,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(

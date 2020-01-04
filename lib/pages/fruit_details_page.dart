@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/models/fruits.dart';
+import 'package:provider/provider.dart';
+
+import '../app_state.dart';
 
 class FruitDetailsPage extends StatelessWidget {
   final Fruit fruit;
@@ -8,6 +11,10 @@ class FruitDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final appState = Provider.of<AppState>(context);
+    final addedToCart = appState.cart;
+    
     return Scaffold(
       backgroundColor: fruit.color[0],
       appBar: AppBar(
@@ -22,12 +29,34 @@ class FruitDetailsPage extends StatelessWidget {
           },
         ),
         actions: <Widget>[
-          IconButton(
-            iconSize: 24.0,
-            icon: Icon(Icons.shopping_cart),
-            color: Colors.white,
-            onPressed: () {},
-          ),
+          Stack(
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.shopping_cart),
+                color: Colors.white,
+                onPressed: () {},
+                iconSize: 24.0,
+              ),
+              (addedToCart > 0) ? Positioned(
+                width: 20,
+                height: 20,
+                right: 5,
+                top: 5,
+                child: Container(
+                  padding: const EdgeInsets.only(top: 3.0),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(20.0)
+                  ),
+                  child: Text(
+                    appState.cart.toString(), 
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12.0),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ) : Container()
+            ],
+          )
         ],
       ),
       body: SingleChildScrollView(
