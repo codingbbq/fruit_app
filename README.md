@@ -11,7 +11,7 @@ Below screenshots are the final output seen on the Android emulator. I had fun d
 ### Home Page
 
 
-<div style="display:inline-block; margin-right: 30px;"><img src="https://raw.githubusercontent.com/codingbbq/fruit_app/master/screenshots/home_page_1.png" /></div>
+<div style="display:inline-block; margin-right: 30px;"><img src="https://raw.githubusercontent.com/codingbbq/fruit_app/master/screenshots/home_page_1.png" style="float:left; margin-right: 30px" /></div>
 
 <div style="display:inline-block"><img src="https://raw.githubusercontent.com/codingbbq/fruit_app/master/screenshots/home_page_2.png" /></div>
 
